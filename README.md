@@ -80,10 +80,6 @@ Project/
 ├── prompt.py             # System prompt
 ├── requirements.txt
 │
-├── assets/
-│   ├── langsmith_trace.png
-│   └── workflow.png
-│
 └── rag/
     ├── retriever.py
     ├── vectorstores/
