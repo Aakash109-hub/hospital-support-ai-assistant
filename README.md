@@ -6,6 +6,8 @@ This project demonstrates how to build a **tool-using AI agent with LangGraph, R
 
 The assistant retrieves hospital knowledge from a **PDF knowledge base** and provides structured responses to patients.
 
+![web_Page](assets/Hospital_Assist_page.png)
+
 ---
 
 # 🚀 Features
