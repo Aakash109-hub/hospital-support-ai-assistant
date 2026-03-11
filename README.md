@@ -155,8 +155,8 @@ The agent decides which tool to use based on the user query.
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/hospital-ai-assistant.git
-cd hospital-ai-assistant
+git clone https://github.com/Aakash109-hub/hospital-support-ai-assistant.git
+cd hospital-support-ai-assistant
 ```
 
 ---
@@ -210,9 +210,13 @@ The assistant uses **LangGraph** to manage the AI agent workflow.
 The agent follows this process:
 
 1️⃣ User sends a query from the Streamlit UI
+
 2️⃣ Query is passed to the **LangGraph Agent**
+
 3️⃣ The agent decides whether a **tool is required**
+
 4️⃣ If needed, the tool retrieves information (RAG / system data)
+
 5️⃣ The response is returned to the user
 
 ---
