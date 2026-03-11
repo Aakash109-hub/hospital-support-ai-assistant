@@ -173,9 +173,9 @@ pip install -r requirements.txt
 
 ---
 
-### 3️⃣ Start Ollama Model
+### 3️⃣ Start the Local LLM (Ollama)
 
-Make sure **Ollama** is running.
+Make sure **Ollama** is installed and running.
 
 ```bash
 ollama run qwen3:4b
@@ -183,17 +183,7 @@ ollama run qwen3:4b
 
 ---
 
-### 4️⃣ Build Vector Database
-
-Run the retriever script once to build FAISS indexes.
-
-```bash
-python rag/retriever.py
-```
-
----
-
-### 5️⃣ Run Streamlit App
+### 4️⃣ Run the Application
 
 ```bash
 streamlit run app.py
@@ -201,42 +191,96 @@ streamlit run app.py
 
 ---
 
+### ⚙️ Automatic Vector Store Creation
+
+The system automatically creates the **FAISS vector database** when the application runs for the first time.
+
+When a query is received, the system:
+
+1. Checks if a vector database exists
+2. If not, it **loads PDF documents**
+3. **Splits them into chunks**
+4. **Generates embeddings**
+5. **Creates a FAISS index**
+
+This process is handled automatically by `retriever.py`.
+
+---
+
+# 🔄 Agent Workflow
+
+The assistant uses **LangGraph** to manage the AI agent workflow.
+
+The agent follows this process:
+
+1️⃣ User sends a query from the Streamlit UI
+2️⃣ Query is passed to the **LangGraph Agent**
+3️⃣ The agent decides whether a **tool is required**
+4️⃣ If needed, the tool retrieves information (RAG / system data)
+5️⃣ The response is returned to the user
+
+---
+
+### Workflow Diagram
+
+Add the workflow diagram from the **assets folder**:
+
+```markdown
+![Agent Workflow](assets/workflow.png)
+```
+
+---
+
+# 🔍 LangSmith Monitoring
+
+The project integrates **LangSmith-style tracing** to monitor agent execution.
+
+This allows developers to observe:
+
+* LLM reasoning
+* Tool calls
+* RAG retrieval
+* Agent decision flow
+
+This is very useful for **debugging AI agents and improving prompts**.
+
+---
+
+### LangSmith Trace Example
+
+```markdown
+![LangSmith Trace](assets/langsmith_trace.png)
+```
+
+---
+
 # 💬 Example Questions
 
-You can ask:
+Users can ask questions like:
 
 * What documents are required for hospital admission?
 * What should I bring before surgery?
 * What happens during hospital discharge?
 * What follow-up care is needed after hospitalisation?
-* What is the surgery schedule for patient P1001?
-
+* What is the surgery schedule for patient **P1001**?
 
 ---
 
-# 🎯 Learning Outcomes
+# 🧠 Learning Outcomes
 
 This project demonstrates:
 
-* Building **AI agents using LangGraph**
-* Implementing **RAG pipelines**
-* Designing **tool-calling LLM systems**
-* Creating **LLM-powered applications with Streamlit**
-* Managing **conversation memory**
+* Building **tool-using AI agents**
+* Implementing **Retrieval Augmented Generation (RAG)**
+* Creating **LangGraph workflows**
+* Designing **LLM-powered applications**
+* Building **AI chat interfaces with Streamlit**
+* Monitoring agents using **LangSmith traces**
 
----
-
-# 🔮 Future Improvements
-
-* Add **real hospital API integration**
-* Improve **multi-patient support**
-* Add **authentication**
-* Add **medical appointment scheduling**
-* Use **LangSmith monitoring**
 ---
 
 # 👨‍💻 Author
 
-**Aakash Gayke**
+**Aakash**
 
 Aspiring **AI Engineer / ML Engineer**
