@@ -223,11 +223,8 @@ The agent follows this process:
 
 ### Workflow Diagram
 
-Add the workflow diagram from the **assets folder**:
-
-```markdown
 ![Agent Workflow](assets/workflow.png)
-```
+
 
 ---
 
@@ -248,9 +245,8 @@ This is very useful for **debugging AI agents and improving prompts**.
 
 ### LangSmith Trace Example
 
-```markdown
+
 ![LangSmith Trace](assets/langsmith_trace.png)
-```
 
 ---
 
